@@ -1,0 +1,20 @@
+
+#-------------Setup----------------
+
+import Ed
+
+Ed.EdisonVersion = Ed.V2
+
+Ed.DistanceUnits = Ed.CM
+Ed.Tempo = Ed.TEMPO_MEDIUM
+
+#--------Your code below-----------
+Ed.LineTrackerLed(Ed.ON)
+
+while True:
+	if Ed.ReadLineState()==Ed.LINE_ON_WHITE:
+		Ed.Drive(Ed.FORWARD_RIGHT, Ed.SPEED_2, Ed.DISTANCE_UNLIMITED)
+	else:
+	    Ed.Drive(Ed.FORWARD_LEFT, Ed.SPEED_5, Ed.DISTANCE_UNLIMITED)
+	    Ed.TimeWait(25,Ed.TIME_MILLISECONDS)
+	    Ed.Drive(Ed.FORWARD, Ed.SPEED_7, Ed.DISTANCE_UNLIMITED)
